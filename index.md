@@ -17,7 +17,7 @@ th, td {
 
 # Open Science in Automotive User Research
 
-Openness and transparency are critical not only for judging the quality of empirical research, but also for accelerating scientific progress and promoting an inclusive scientific community. This initiative reflects our commitment to driving forward the development of open, user-centered automotive technologies and services, ensuring that knowledge and findings are shared openly to benefit the broader community. Therefore, we provide **practical guidelines** for authors on how to make their research open and transparent, and provide **a platform** for authors to promote the research artifacts they have made available to the broader automotive user research community.
+Openness and transparency are critical not only for judging the quality of empirical research, but also for accelerating scientific progress and promoting an inclusive scientific community. This initiative reflects our commitment to driving forward the development of open, user-centered automotive technologies and services, ensuring that knowledge and findings are shared openly to benefit the broader community. Therefore, we provide **practical guidelines** for authors on how to make their research open and transparent and provide **a platform** for authors to promote the research artifacts they have made available to the broader automotive user research community.
 
 ## Why Open Science?
 
@@ -177,7 +177,7 @@ For more information on the current state of the art and the motivators and barr
 }
 ```
 
-Also see the 2023 workshop [website](https://autouimodelingws.jimdosite.com/) for more information.
+Also, see the 2023 workshop [website](https://autouimodelingws.jimdosite.com/) for more information.
 
 
 
