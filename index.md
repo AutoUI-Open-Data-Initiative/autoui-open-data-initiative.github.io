@@ -118,11 +118,10 @@ We will check the entry and approve it as soon as possible.
 </style>
 
 
-<!-- Paste your table HTML below -->
 {% assign categories = site.data.related_works | group_by: "Category" %}
 {% for category in categories %}
   <h3 class="mt-4">{{ category.name }}</h3>
-  <div class="table-wrapper">
+  <div class="datatables-container">
     <table id="table-{{ category.name | slugify }}" class="table table-striped table-bordered display responsive nowrap" style="width:100%">
       <thead class="table-light">
         <tr>

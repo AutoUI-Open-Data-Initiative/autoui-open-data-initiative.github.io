@@ -434,3 +434,77 @@ table.dataTable {
 .site-footer-credits {
   color: $blockquote-text-color;
 }
+
+
+/* -----------------------------------------------
+   DataTables Styling – Full Width + Bootstrap Safe
+   ----------------------------------------------- */
+.datatables-container {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.datatables-container .dataTables_wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block;
+}
+
+/* Prevent flex layout from shrinking columns */
+.datatables-container .dataTables_wrapper .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Prevent controls from shrinking */
+.datatables-container .dataTables_length,
+.datatables-container .dataTables_filter {
+  flex: 1 1 auto;
+  min-width: 250px;
+  padding: 0.5rem 0;
+}
+
+.datatables-container .dataTables_filter {
+  text-align: right;
+}
+
+/* Table-specific styling */
+.datatables-container table.dataTable {
+  width: 100% !important;
+  table-layout: fixed;
+  font-size: 0.9em;
+}
+
+.datatables-container table.dataTable td,
+.datatables-container table.dataTable th {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 8px 12px;
+  vertical-align: middle;
+}
+
+.datatables-container table.dataTable tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Responsive stack for controls on small screens */
+@media screen and (max-width: 768px) {
+  .datatables-container .dataTables_wrapper .row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .datatables-container .dataTables_length,
+  .datatables-container .dataTables_filter {
+    width: 100%;
+    text-align: left !important;
+    margin-bottom: 0.75rem;
+  }
+}
