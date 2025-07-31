@@ -496,7 +496,10 @@ table.dataTable {
 }
 
 /* Footer text + pagination */
-.datatables-wrapper .dataTables_info,
+.datatables-wrapper .dataTables_info {
+  display: none !important;
+}
+
 .datatables-wrapper .dataTables_paginate {
   font-size: 0.9em;
   padding: 0;
@@ -512,6 +515,6 @@ table.dataTable {
 
   /* Mobile search alignment override */
   .datatables-wrapper .dataTables_filter {
-    text-align: left;
+    text-align: right;
   }
 }
