@@ -436,7 +436,7 @@ table.dataTable {
 }
 
 
-/* Streamlined DataTables styling inside .main-content */
+/* DataTables full width inside .main-content and Bootstrap */
 .datatables-wrapper {
   width: 100%;
   margin-bottom: 2rem;
@@ -444,35 +444,13 @@ table.dataTable {
 }
 
 .datatables-wrapper .dataTables_wrapper {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-.datatables-wrapper .dataTables_wrapper .row {
-  display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  margin: 0 0 1rem 0;
-  gap: 1rem;
-}
-
-.datatables-wrapper .dataTables_length,
-.datatables-wrapper .dataTables_filter,
-.datatables-wrapper .dataTables_info,
-.datatables-wrapper .dataTables_paginate {
-  flex: 1 1 100%;
-  text-align: left;
-}
-
-.datatables-wrapper .dataTables_filter {
-  text-align: right;
 }
 
 .datatables-wrapper table.dataTable {
   width: 100% !important;
-  table-layout: auto;
-  font-size: 0.9em;
-  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.8em;
 }
 
 .datatables-wrapper table.dataTable td,
@@ -483,28 +461,49 @@ table.dataTable {
   padding: 8px 12px;
 }
 
-.datatables-wrapper table.dataTable tbody tr:hover {
-  background-color: #f8f9fa;
+.datatables-wrapper .dataTables_wrapper .row {
+  width: 100%;
+  margin: 0;
 }
 
 @media screen and (max-width: 768px) {
   .datatables-wrapper .dataTables_wrapper .row {
     flex-direction: column;
+    align-items: stretch;
   }
+}
 
-  .datatables-wrapper .dataTables_length,
-  .datatables-wrapper .dataTables_filter,
-  .datatables-wrapper .dataTables_info,
-  .datatables-wrapper .dataTables_paginate {
-    flex: 1 1 100%;
-    width: 100%;
-  }
+/* Fix DataTables Bootstrap layout splitting content */
+.datatables-wrapper .dataTables_wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
 
-  .datatables-wrapper .dataTables_filter {
-    text-align: left;
-  }
+.datatables-wrapper .dataTables_wrapper .row {
+  display: block; /* Stack vertically */
+  width: 100%;
+  margin: 0;
+}
 
-  .datatables-wrapper table.dataTable {
-    table-layout: fixed;
-  }
+/* Stack 'Show entries' and 'Search' full-width */
+.datatables-wrapper .dataTables_length,
+.datatables-wrapper .dataTables_filter {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0;
+}
+
+/* Align search input right */
+.datatables-wrapper .dataTables_filter {
+  text-align: right;
+}
+
+/* Adjust pagination */
+.datatables-wrapper .dataTables_info,
+.datatables-wrapper .dataTables_paginate {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  text-align: right;
 }
