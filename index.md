@@ -90,30 +90,51 @@ We will check the entry and approve it as soon as possible.
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-  /* Table styling overrides */
-  table.dataTable {
-    font-size: 0.9em;
-  }
+[//]: # ()
+[//]: # (<style>)
 
-  table.dataTable td,
-  table.dataTable th {
-    white-space: nowrap;
-    overflow-x: auto;
-    max-width: 0;
-    padding: 8px 12px;
-    border-bottom: 1px solid #dee2e6;
-  }
+[//]: # (  /* Table styling overrides */)
 
-  table.dataTable tbody tr:hover {
-    background-color: #f8f9fa;
-  }
+[//]: # (  table.dataTable {)
 
-  .dataTables_wrapper {
-    width: 100%;
-    overflow-x: auto;
-  }
-</style>
+[//]: # (    font-size: 0.9em;)
+
+[//]: # (  })
+
+[//]: # ()
+[//]: # (  table.dataTable td,)
+
+[//]: # (  table.dataTable th {)
+
+[//]: # (    white-space: nowrap;)
+
+[//]: # (    overflow-x: auto;)
+
+[//]: # (    max-width: 0;)
+
+[//]: # (    padding: 8px 12px;)
+
+[//]: # (    border-bottom: 1px solid #dee2e6;)
+
+[//]: # (  })
+
+[//]: # ()
+[//]: # (  table.dataTable tbody tr:hover {)
+
+[//]: # (    background-color: #f8f9fa;)
+
+[//]: # (  })
+
+[//]: # ()
+[//]: # (  .dataTables_wrapper {)
+
+[//]: # (    width: 100%;)
+
+[//]: # (    overflow-x: auto;)
+
+[//]: # (  })
+
+[//]: # (</style>)
 
 
 {% assign categories = site.data.related_works | group_by: "Category" %}

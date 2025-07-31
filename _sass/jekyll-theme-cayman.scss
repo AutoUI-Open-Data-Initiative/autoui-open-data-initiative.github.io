@@ -435,48 +435,44 @@ table.dataTable {
   color: $blockquote-text-color;
 }
 
-* Ensure DataTables takes full width of its container */
+
+/* Streamlined DataTables styling inside .main-content */
 .datatables-wrapper {
   width: 100%;
-  display: block;
-  overflow-x: auto;
   margin-bottom: 2rem;
+  overflow-x: auto;
 }
 
-/* Fix width collapse caused by flex in Bootstrap 5 layout */
 .datatables-wrapper .dataTables_wrapper {
   width: 100% !important;
   max-width: 100% !important;
-  display: block;
 }
 
-/* Fix Bootstrap row shrinking the controls */
 .datatables-wrapper .dataTables_wrapper .row {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
+  gap: 1rem;
 }
 
-/* Let search/select controls grow */
 .datatables-wrapper .dataTables_length,
-.datatables-wrapper .dataTables_filter {
-  flex: 1 1 auto;
-  min-width: 200px;
-  padding: 0.5rem 0;
+.datatables-wrapper .dataTables_filter,
+.datatables-wrapper .dataTables_info,
+.datatables-wrapper .dataTables_paginate {
+  flex: 1 1 100%;
+  text-align: left;
 }
 
 .datatables-wrapper .dataTables_filter {
   text-align: right;
 }
 
-/* Table sizing and layout */
 .datatables-wrapper table.dataTable {
   width: 100% !important;
-  table-layout: fixed;
+  table-layout: auto;
   font-size: 0.9em;
+  border-collapse: collapse;
 }
 
 .datatables-wrapper table.dataTable td,
@@ -485,24 +481,30 @@ table.dataTable {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 8px 12px;
-  vertical-align: middle;
 }
 
 .datatables-wrapper table.dataTable tbody tr:hover {
   background-color: #f8f9fa;
 }
 
-/* Responsive tweaks */
 @media screen and (max-width: 768px) {
   .datatables-wrapper .dataTables_wrapper .row {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .datatables-wrapper .dataTables_length,
-  .datatables-wrapper .dataTables_filter {
+  .datatables-wrapper .dataTables_filter,
+  .datatables-wrapper .dataTables_info,
+  .datatables-wrapper .dataTables_paginate {
+    flex: 1 1 100%;
     width: 100%;
-    text-align: left !important;
-    margin-bottom: 0.75rem;
+  }
+
+  .datatables-wrapper .dataTables_filter {
+    text-align: left;
+  }
+
+  .datatables-wrapper table.dataTable {
+    table-layout: fixed;
   }
 }
