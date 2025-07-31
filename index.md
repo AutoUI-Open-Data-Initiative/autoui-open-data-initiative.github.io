@@ -91,16 +91,20 @@ We will check the entry and approve it as soon as possible.
 
 <style>
   table.dataTable tbody td {
-    white-space: nowrap; /* Ensure text does not wrap */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    max-width: 0; /* Set max-width to 0 to enable scrolling */
-    cursor: pointer; /* Change cursor to indicate scrollable content */
+    white-space: nowrap;
+    overflow-x: auto;
+    max-width: 0;
+    cursor: pointer;
+    font-size: 0.9em; /* Slightly reduced font size */
   }
-  
-  /* Optional: Styling to make the table look better */
+
+  table.dataTable thead th {
+    font-size: 0.9em; /* Reduce header font size to match body */
+  }
+
   .dataTables_wrapper {
     width: 100%;
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    overflow-x: auto;
   }
 </style>
 
@@ -111,21 +115,23 @@ We will check the entry and approve it as soon as possible.
   <table id="table-{{ category.name | slugify }}" class="display" style="width:100%">
     <thead>
       <tr>
-        <th style="width: 35%">Title</th>
-        <th style="width: 20%">Author</th>
-        <th style="width: 5%">Year</th>
-        <th style="width: 20%">Paper-Link</th>
-        <th style="width: 20%">Repo-Link</th>
+        <th style="width: 45%">Title</th>
+        <th style="width: 30%">Author</th>
+        <th style="width: 10%">Year</th>
+        <th style="width: 15%">Resources</th>
       </tr>
     </thead>
     <tbody>
       {% for row in category.items %}
         <tr>
-          <td>{{ row.Title }}</td>
+          <td><a href="{{ row["Paper-Link"] }}">{{ row.Title }}</a></td>
           <td>{{ row.Author }}</td>
           <td>{{ row.Year }}</td>
-          <td><a href="{{ row["Paper-Link"] }}">{{ row.Paper-Link }}</a></td>
-          <td><a href="{{ row["Repo-Link"] }}">{{ row.Repo-Link }}</a></td>
+          <td>
+            {% if row["Repo-Link"] %}
+              <a href="{{ row["Repo-Link"] }}">Link</a>
+            {% endif %}
+          </td>
         </tr>
       {% endfor %}
     </tbody>
@@ -141,13 +147,12 @@ We will check the entry and approve it as soon as possible.
   $(document).ready(function() {
     {% for category in categories %}
       $('#table-{{ category.name | slugify }}').DataTable({
-        "autoWidth": false,  // Disable automatic column width calculation
+        "autoWidth": false,
         "columnDefs": [
-          { "width": "35%", "targets": 0 },
-          { "width": "20%", "targets": 1 },
-          { "width": "5%", "targets": 2 },
-          { "width": "20%", "targets": 3 },
-          { "width": "20%", "targets": 4 }
+          { "width": "45%", "targets": 0 },
+          { "width": "30%", "targets": 1 },
+          { "width": "10%", "targets": 2 },
+          { "width": "15%", "targets": 3 }
         ]
       });
     {% endfor %}
