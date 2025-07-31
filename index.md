@@ -58,7 +58,7 @@ There are many places where we can publish open access artifacts. It is good pra
 1. **[ACM Digital Library](https://dl.acm.org)** (FAIR): AutoUI is an ACM conference, and the platform allows the sharing of (small) supplementary material with the publication.
 2. **[OSF](https://osf.io)** (FAIR): Allows to make repos anonymous for review, which can be handy for the submission process. It is a ‘swiss knife’ for publishing artifacts in open access, and the platform allows a great level of flexibility. File versioning is straightforward, and OSF also allows you to pre-register your study. It is also easy to make your material anonymous for the review process.
 3. **[Zenodo](https://zenodo.org)** (FAIR): Data is stored at CERN, which is reliable. It is becoming a common place to share data, which may make it user-friendly. They accept up to 50GB per dataset with an option to have multiple datasets.
-4. **[GitHub](https://github.com)** (**not** FAIR; see [here](https://fairdataforum.org/t/can-github-be-considered-a-fair-repository/410/2)) Everyone knows how to navigate around a repo on GitHub, which can be an advantage for outreach. But it is not FAIR as no **globally unique** and **persistent** identifier is created. What can be practiced is to provide a link to the active project in the manuscript, and then still upload materials to a FAIR platform for reproducibility.
+4. **[GitHub](https://github.com)** (**not** FAIR; Everyone knows how to navigate around a repo on GitHub, which can be an advantage for outreach. But it is not FAIR as no **globally unique** and **persistent** identifier is created. What can be practiced is to provide a link to the active project in the manuscript, and then still upload materials to a FAIR platform for reproducibility.
 5. **[4TU.ResearchData](https://data.4tu.nl)** (FAIR): Local storage for the technical universities of the Netherlands. They do quite a good job of making the management of datasets easy. Likely, there is a similar portal in your institution/country.
 
 
@@ -85,21 +85,30 @@ We will check the entry and approve it as soon as possible.
 
 
 
-
-<!-- Include DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+<!-- Head Includes -->
+<!-- Add these in your <head> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-  table.dataTable tbody td {
+  /* Table styling overrides */
+  table.dataTable {
+    font-size: 0.9em;
+  }
+
+  table.dataTable td,
+  table.dataTable th {
     white-space: nowrap;
     overflow-x: auto;
     max-width: 0;
-    cursor: pointer;
-    font-size: 0.7em; /* Slightly reduced font size */
+    padding: 8px 12px;
+    border-bottom: 1px solid #dee2e6;
   }
 
-  table.dataTable thead th {
-    font-size: 0.9em; /* Reduce header font size to match body */
+  table.dataTable tbody tr:hover {
+    background-color: #f8f9fa;
   }
 
   .dataTables_wrapper {
@@ -108,56 +117,70 @@ We will check the entry and approve it as soon as possible.
   }
 </style>
 
-<!-- Table Structure -->
+<!-- Table Section (e.g., in your Jekyll layout or page) -->
 {% assign categories = site.data.related_works | group_by: "Category" %}
 {% for category in categories %}
-  <h3>{{ category.name }}</h3>
-  <table id="table-{{ category.name | slugify }}" class="display" style="width:100%">
-    <thead>
-      <tr>
-        <th style="width: 45%">Title</th>
-        <th style="width: 30%">Author</th>
-        <th style="width: 10%">Year</th>
-        <th style="width: 15%">Resources</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for row in category.items %}
+  <h3 class="mt-4">{{ category.name }}</h3>
+  <div class="table-responsive">
+    <table id="table-{{ category.name | slugify }}" class="table table-striped table-bordered display responsive nowrap" style="width:100%">
+      <thead class="table-light">
         <tr>
-          <td><a href="{{ row["Paper-Link"] }}">{{ row.Title }}</a></td>
-          <td>{{ row.Author }}</td>
-          <td>{{ row.Year }}</td>
-          <td>
-            {% if row["Repo-Link"] %}
-              <a href="{{ row["Repo-Link"] }}">Link</a>
-            {% endif %}
-          </td>
+          <th style="width: 50%">Title</th>
+          <th style="width: 30%">Author</th>
+          <th style="width: 10%">Year</th>
+          <th style="width: 10%">Resources</th>
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        {% for row in category.items %}
+          <tr>
+            <td title="{{ row.Title }}">
+              <a href="{{ row["Paper-Link"] }}" target="_blank" rel="noopener noreferrer">
+                {{ row.Title }}
+              </a>
+            </td>
+            <td>{{ row.Author }}</td>
+            <td>{{ row.Year }}</td>
+            <td>
+              {% if row["Repo-Link"] %}
+                <a href="{{ row["Repo-Link"] }}" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-link"></i>
+                </a>
+              {% endif %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endfor %}
 
-<!-- Include jQuery and DataTables JS -->
-<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 
-<!-- Initialize DataTables -->
+<!-- Scripts (put at end of body) -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js"></script>
+
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     {% for category in categories %}
       $('#table-{{ category.name | slugify }}').DataTable({
-        "autoWidth": false,
-        "columnDefs": [
-          { "width": "45%", "targets": 0 },
-          { "width": "30%", "targets": 1 },
-          { "width": "10%", "targets": 2 },
-          { "width": "15%", "targets": 3 }
+        responsive: true,
+        autoWidth: false,
+        columnDefs: [
+          { width: "50%", targets: 0 },
+          { width: "30%", targets: 1 },
+          { width: "10%", targets: 2 },
+          { width: "10%", targets: 3 }
         ]
       });
     {% endfor %}
   });
 </script>
+
 
 
 
