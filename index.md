@@ -95,7 +95,7 @@ We will check the entry and approve it as soon as possible.
     overflow-x: auto;
     max-width: 0;
     cursor: pointer;
-    font-size: 0.9em; /* Slightly reduced font size */
+    font-size: 0.7em; /* Slightly reduced font size */
   }
 
   table.dataTable thead th {
