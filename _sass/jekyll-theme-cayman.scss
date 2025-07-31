@@ -62,6 +62,7 @@ a {
 }
 
 .btn {
+  all: unset;
   display: inline-block;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.7);
@@ -141,21 +142,21 @@ a {
   }
 }
 
-.page-header .btn {
-  all: unset; /* Reset Bootstrap styles */
-  background-color: #157878;
-  color: white;
-  padding: 0.4em 1em;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.page-header .btn:hover {
-  background-color: #125f66;
-  color: #fff;
-}
+//.page-header .btn {
+//  all: unset; /* Reset Bootstrap styles */
+//  background-color: #157878;
+//  color: white;
+//  padding: 0.4em 1em;
+//  text-decoration: none;
+//  border-radius: 4px;
+//  font-weight: bold;
+//  display: inline-block;
+//}
+//
+//.page-header .btn:hover {
+//  background-color: #125f66;
+//  color: #fff;
+//}
 
 .project-tagline {
   margin-bottom: 2rem;
