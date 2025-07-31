@@ -141,6 +141,22 @@ a {
   }
 }
 
+.page-header .btn {
+  all: unset; /* Reset Bootstrap styles */
+  background-color: #157878;
+  color: white;
+  padding: 0.4em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.page-header .btn:hover {
+  background-color: #125f66;
+  color: #fff;
+}
+
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
