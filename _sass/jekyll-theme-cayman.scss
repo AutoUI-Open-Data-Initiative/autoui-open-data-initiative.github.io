@@ -62,7 +62,6 @@ a {
 }
 
 .btn {
-  all: unset;
   display: inline-block;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.7);
@@ -142,21 +141,52 @@ a {
   }
 }
 
-//.page-header .btn {
-//  all: unset; /* Reset Bootstrap styles */
-//  background-color: #157878;
-//  color: white;
-//  padding: 0.4em 1em;
-//  text-decoration: none;
-//  border-radius: 4px;
-//  font-weight: bold;
-//  display: inline-block;
-//}
-//
-//.page-header .btn:hover {
-//  background-color: #125f66;
-//  color: #fff;
-//}
+.page-header .btn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.3rem;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.page-header .btn:hover {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.page-header .btn + .btn {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .page-header .btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .page-header .btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .page-header .btn + .btn {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+}
 
 .project-tagline {
   margin-bottom: 2rem;
