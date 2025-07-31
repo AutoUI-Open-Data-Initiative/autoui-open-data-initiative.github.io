@@ -434,7 +434,9 @@ table.dataTable {
 .site-footer-credits {
   color: $blockquote-text-color;
 }
-/* DataTables full width inside .main-content and Bootstrap */
+
+
+/* Streamlined DataTables styling inside .main-content */
 .datatables-wrapper {
   width: 100%;
   margin-bottom: 2rem;
@@ -442,13 +444,35 @@ table.dataTable {
 }
 
 .datatables-wrapper .dataTables_wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.datatables-wrapper .dataTables_wrapper .row {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
+  margin: 0 0 1rem 0;
+  gap: 1rem;
+}
+
+.datatables-wrapper .dataTables_length,
+.datatables-wrapper .dataTables_filter,
+.datatables-wrapper .dataTables_info,
+.datatables-wrapper .dataTables_paginate {
+  flex: 1 1 100%;
+  text-align: left;
+}
+
+.datatables-wrapper .dataTables_filter {
+  text-align: right;
 }
 
 .datatables-wrapper table.dataTable {
   width: 100% !important;
-  table-layout: fixed;
+  table-layout: auto;
   font-size: 0.9em;
+  border-collapse: collapse;
 }
 
 .datatables-wrapper table.dataTable td,
@@ -459,14 +483,28 @@ table.dataTable {
   padding: 8px 12px;
 }
 
-.datatables-wrapper .dataTables_wrapper .row {
-  width: 100%;
-  margin: 0;
+.datatables-wrapper table.dataTable tbody tr:hover {
+  background-color: #f8f9fa;
 }
 
 @media screen and (max-width: 768px) {
   .datatables-wrapper .dataTables_wrapper .row {
     flex-direction: column;
-    align-items: stretch;
+  }
+
+  .datatables-wrapper .dataTables_length,
+  .datatables-wrapper .dataTables_filter,
+  .datatables-wrapper .dataTables_info,
+  .datatables-wrapper .dataTables_paginate {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .datatables-wrapper .dataTables_filter {
+    text-align: left;
+  }
+
+  .datatables-wrapper table.dataTable {
+    table-layout: fixed;
   }
 }
