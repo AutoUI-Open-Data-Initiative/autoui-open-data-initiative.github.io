@@ -141,6 +141,17 @@ a {
   }
 }
 
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table.dataTable {
+  width: 100% !important;
+  table-layout: fixed;
+  font-size: 0.9em;
+}
+
 .page-header .btn {
   display: inline-block;
   margin-bottom: 1rem;

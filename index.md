@@ -117,11 +117,12 @@ We will check the entry and approve it as soon as possible.
   }
 </style>
 
-<!-- Table Section (e.g., in your Jekyll layout or page) -->
+
+<!-- Paste your table HTML below -->
 {% assign categories = site.data.related_works | group_by: "Category" %}
 {% for category in categories %}
   <h3 class="mt-4">{{ category.name }}</h3>
-  <div class="table-responsive">
+  <div class="table-wrapper">
     <table id="table-{{ category.name | slugify }}" class="table table-striped table-bordered display responsive nowrap" style="width:100%">
       <thead class="table-light">
         <tr>
@@ -135,9 +136,7 @@ We will check the entry and approve it as soon as possible.
         {% for row in category.items %}
           <tr>
             <td title="{{ row.Title }}">
-              <a href="{{ row["Paper-Link"] }}" target="_blank" rel="noopener noreferrer">
-                {{ row.Title }}
-              </a>
+              <a href="{{ row["Paper-Link"] }}" target="_blank" rel="noopener noreferrer">{{ row.Title }}</a>
             </td>
             <td>{{ row.Author }}</td>
             <td>{{ row.Year }}</td>
