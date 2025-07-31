@@ -434,9 +434,7 @@ table.dataTable {
 .site-footer-credits {
   color: $blockquote-text-color;
 }
-
-
-/* Streamlined DataTables styling inside .main-content */
+/* DataTables wrapper layout */
 .datatables-wrapper {
   width: 100%;
   margin-bottom: 2rem;
@@ -448,29 +446,21 @@ table.dataTable {
   max-width: 100% !important;
 }
 
+/* Flex layout for search + info/pagination rows */
 .datatables-wrapper .dataTables_wrapper .row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin: 0 0 1rem 0;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 
-.datatables-wrapper .dataTables_length,
-.datatables-wrapper .dataTables_filter,
-.datatables-wrapper .dataTables_info,
-.datatables-wrapper .dataTables_paginate {
-  flex: 1 1 100%;
-  text-align: left;
-}
-
-.datatables-wrapper .dataTables_filter {
-  text-align: right;
-}
-
+/* Main table appearance */
 .datatables-wrapper table.dataTable {
   width: 100% !important;
-  table-layout: auto;
+  table-layout: fixed;
   font-size: 0.9em;
   border-collapse: collapse;
 }
@@ -487,15 +477,12 @@ table.dataTable {
   background-color: #f8f9fa;
 }
 
-@media screen and (max-width: 768px) {
-  .datatables-wrapper .dataTables_wrapper .row {
-    flex-direction: column;
-  }
-
-  .datatables-wrapper .dataTables_length {
+/* Hide "Show entries" dropdown */
+.datatables-wrapper .dataTables_length {
   display: none !important;
 }
-  /* Align DataTables search box to the right and match font size */
+
+/* Desktop search alignment + styling */
 .datatables-wrapper .dataTables_filter {
   text-align: right;
   font-size: 0.9em;
@@ -507,17 +494,8 @@ table.dataTable {
     border: 1px solid #ccc;
   }
 }
-/* Layout pagination + info side-by-side */
-.datatables-wrapper .dataTables_wrapper .row:last-child {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap; /* allow stacking on small screens */
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
 
-/* Match font size */
+/* Footer text + pagination */
 .datatables-wrapper .dataTables_info,
 .datatables-wrapper .dataTables_paginate {
   font-size: 0.9em;
@@ -525,12 +503,15 @@ table.dataTable {
   margin: 0;
 }
 
-
-  .datatables-wrapper .dataTables_filter {
-    text-align: left;
+/* Mobile layout adjustments */
+@media screen and (max-width: 768px) {
+  .datatables-wrapper .dataTables_wrapper .row {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .datatables-wrapper table.dataTable {
-    table-layout: fixed;
+  /* Mobile search alignment override */
+  .datatables-wrapper .dataTables_filter {
+    text-align: left;
   }
 }
