@@ -492,13 +492,18 @@ table.dataTable {
     flex-direction: column;
   }
 
-  .datatables-wrapper .dataTables_length,
+  .datatables-wrapper .dataTables_length {
+  display: none !important;
+}
   .datatables-wrapper .dataTables_filter,
   .datatables-wrapper .dataTables_info,
   .datatables-wrapper .dataTables_paginate {
-    flex: 1 1 100%;
-    width: 100%;
-  }
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0;
+}
+
 
   .datatables-wrapper .dataTables_filter {
     text-align: left;

@@ -99,10 +99,10 @@ We will check the entry and approve it as soon as possible.
     <table id="table-{{ category.name | slugify }}" class="table table-bordered display responsive nowrap" style="width:100%">
       <thead class="table-light">
         <tr>
-          <th style="width: 50%">Paper Title</th>
-          <th style="width: 30%">Author</th>
-          <th style="width: 10%">Year</th>
-          <th style="width: 10%">Resources</th>
+          <th style="width: 100%">Paper Title</th>
+          <th class="none">Author</th>
+          <th class="none">Year</th>
+          <th class="none">Resources</th>
         </tr>
       </thead>
       <tbody>
@@ -138,16 +138,14 @@ We will check the entry and approve it as soon as possible.
 
 <script>
   $(document).ready(function () {
+    {% assign categories = site.data.related_works | group_by: "Category" %}
     {% for category in categories %}
       $('#table-{{ category.name | slugify }}').DataTable({
-        responsive: true,
+        responsive: {
+          details: { type: 'inline' }
+        },
         autoWidth: false,
-        columnDefs: [
-          { width: "50%", targets: 0 },
-          { width: "30%", targets: 1 },
-          { width: "10%", targets: 2 },
-          { width: "10%", targets: 3 }
-        ]
+        lengthChange: false
       });
     {% endfor %}
   });
