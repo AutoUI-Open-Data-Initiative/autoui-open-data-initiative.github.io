@@ -435,22 +435,48 @@ table.dataTable {
   color: $blockquote-text-color;
 }
 
-
-/* DataTables full width inside .main-content and Bootstrap */
+* Ensure DataTables takes full width of its container */
 .datatables-wrapper {
   width: 100%;
-  margin-bottom: 2rem;
+  display: block;
   overflow-x: auto;
+  margin-bottom: 2rem;
 }
 
+/* Fix width collapse caused by flex in Bootstrap 5 layout */
 .datatables-wrapper .dataTables_wrapper {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block;
 }
 
+/* Fix Bootstrap row shrinking the controls */
+.datatables-wrapper .dataTables_wrapper .row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+/* Let search/select controls grow */
+.datatables-wrapper .dataTables_length,
+.datatables-wrapper .dataTables_filter {
+  flex: 1 1 auto;
+  min-width: 200px;
+  padding: 0.5rem 0;
+}
+
+.datatables-wrapper .dataTables_filter {
+  text-align: right;
+}
+
+/* Table sizing and layout */
 .datatables-wrapper table.dataTable {
   width: 100% !important;
   table-layout: fixed;
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 .datatables-wrapper table.dataTable td,
@@ -459,51 +485,24 @@ table.dataTable {
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 8px 12px;
+  vertical-align: middle;
 }
 
-.datatables-wrapper .dataTables_wrapper .row {
-  width: 100%;
-  margin: 0;
+.datatables-wrapper table.dataTable tbody tr:hover {
+  background-color: #f8f9fa;
 }
 
+/* Responsive tweaks */
 @media screen and (max-width: 768px) {
   .datatables-wrapper .dataTables_wrapper .row {
     flex-direction: column;
     align-items: stretch;
   }
-}
 
-/* Fix DataTables Bootstrap layout splitting content */
-.datatables-wrapper .dataTables_wrapper {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-.datatables-wrapper .dataTables_wrapper .row {
-  display: block; /* Stack vertically */
-  width: 100%;
-  margin: 0;
-}
-
-/* Stack 'Show entries' and 'Search' full-width */
-.datatables-wrapper .dataTables_length,
-.datatables-wrapper .dataTables_filter {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0.5rem 0;
-}
-
-/* Align search input right */
-.datatables-wrapper .dataTables_filter {
-  text-align: right;
-}
-
-/* Adjust pagination */
-.datatables-wrapper .dataTables_info,
-.datatables-wrapper .dataTables_paginate {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 0;
-  text-align: right;
+  .datatables-wrapper .dataTables_length,
+  .datatables-wrapper .dataTables_filter {
+    width: 100%;
+    text-align: left !important;
+    margin-bottom: 0.75rem;
+  }
 }
