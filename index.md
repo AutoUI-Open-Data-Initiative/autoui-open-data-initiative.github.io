@@ -90,51 +90,6 @@ We will check the entry and approve it as soon as possible.
 <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap5.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-[//]: # ()
-[//]: # (<style>)
-
-[//]: # (  /* Table styling overrides */)
-
-[//]: # (  table.dataTable {)
-
-[//]: # (    font-size: 0.9em;)
-
-[//]: # (  })
-
-[//]: # ()
-[//]: # (  table.dataTable td,)
-
-[//]: # (  table.dataTable th {)
-
-[//]: # (    white-space: nowrap;)
-
-[//]: # (    overflow-x: auto;)
-
-[//]: # (    max-width: 0;)
-
-[//]: # (    padding: 8px 12px;)
-
-[//]: # (    border-bottom: 1px solid #dee2e6;)
-
-[//]: # (  })
-
-[//]: # ()
-[//]: # (  table.dataTable tbody tr:hover {)
-
-[//]: # (    background-color: #f8f9fa;)
-
-[//]: # (  })
-
-[//]: # ()
-[//]: # (  .dataTables_wrapper {)
-
-[//]: # (    width: 100%;)
-
-[//]: # (    overflow-x: auto;)
-
-[//]: # (  })
-
-[//]: # (</style>)
 
 
 {% assign categories = site.data.related_works | group_by: "Category" %}
@@ -144,7 +99,7 @@ We will check the entry and approve it as soon as possible.
     <table id="table-{{ category.name | slugify }}" class="table table-striped table-bordered display responsive nowrap" style="width:100%">
       <thead class="table-light">
         <tr>
-          <th style="width: 50%">Title</th>
+          <th style="width: 50%">Paper Title</th>
           <th style="width: 30%">Author</th>
           <th style="width: 10%">Year</th>
           <th style="width: 10%">Resources</th>
