@@ -127,19 +127,15 @@ We will check the entry and approve it as soon as possible.
 
 <script>
   $(document).ready(function () {
-    {% assign categories = site.data.related_works | group_by: "Category" %}
-    {% for category in categories %}
-      $('#table-{{ category.name | slugify }}').DataTable({
-        responsive: {
-          details: { type: 'inline' }
-        },
-        autoWidth: false,
-        lengthChange: false
-      });
-    {% endfor %}
+    $('table[id^="table-"]').DataTable({
+      responsive: {
+        details: { type: 'inline' }
+      },
+      autoWidth: false,
+      lengthChange: false
+    });
   });
 </script>
-
 
 
 

@@ -141,17 +141,6 @@ a {
   }
 }
 
-//.table-wrapper {
-//  width: 100%;
-//  overflow-x: auto;
-//}
-//
-//table.dataTable {
-//  width: 100% !important;
-//  table-layout: fixed;
-//  font-size: 0.9em;
-//}
-
 .page-header .btn {
   display: inline-block;
   margin-bottom: 1rem;
@@ -433,48 +422,67 @@ a {
 
 .site-footer-credits {
   color: $blockquote-text-color;
+
+
+
+}/* --- Remove "Show entries" and "Showing X of Y" --- */
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_info {
+  display: none !important;
 }
 
-/* Align the search bar to the right */
+/* --- Make search bar right-aligned --- */
 .dataTables_wrapper .dataTables_filter {
   display: flex !important;
   justify-content: flex-end !important;
-  margin-bottom: 1rem;
+  margin: 0.75rem 0;
   width: 100%;
 }
 
-.dataTables_wrapper .dataTables_filter input[type="search"] {
+.dataTables_wrapper .dataTables_filter label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 0.9rem;
-  padding: 4px 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-left: 0.5rem;
 }
 
-/* Center pagination */
+.dataTables_wrapper .dataTables_filter input[type="search"] {
+  padding: 4px 8px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* --- Make pagination centered & compact --- */
 .dataTables_wrapper .dataTables_paginate {
   display: flex !important;
   justify-content: center !important;
   align-items: center;
-  margin-top: 0.5rem;
+  gap: 0.3rem;
+  padding: 1rem 0;
 }
 
-/* Equal button size for pagination */
+/* --- Normalize all pagination buttons --- */
 .dataTables_wrapper .paginate_button {
-  font-size: 0.4rem !important;
-  padding: 0.3rem 0.6rem !important;
-  margin: 0 0.15rem !important;
+  padding: 0.35rem 0.7rem !important;
+  font-size: 0.85rem !important;
+  line-height: 1.2 !important;
+  border: 1px solid #ccc !important;
+  border-radius: 4px !important;
+  background-color: #f8f9fa !important;
   color: #333 !important;
-  min-width: 50px !important;
+  min-width: 34px;
   text-align: center;
 }
+
+.dataTables_wrapper .paginate_button:hover {
+  background-color: #e9ecef !important;
+  color: #000 !important;
+}
+
 .dataTables_wrapper .paginate_button.current {
   background-color: #007bff !important;
   color: #fff !important;
   border-color: #007bff !important;
 }
-
-.datatables-wrapper .dataTables_length {
-  display: none !important;
 }
-
