@@ -141,16 +141,16 @@ a {
   }
 }
 
-.table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-}
-
-table.dataTable {
-  width: 100% !important;
-  table-layout: fixed;
-  font-size: 0.9em;
-}
+//.table-wrapper {
+//  width: 100%;
+//  overflow-x: auto;
+//}
+//
+//table.dataTable {
+//  width: 100% !important;
+//  table-layout: fixed;
+//  font-size: 0.9em;
+//}
 
 .page-header .btn {
   display: inline-block;
@@ -461,25 +461,18 @@ table.dataTable {
 
 /* Equal button size for pagination */
 .dataTables_wrapper .paginate_button {
-  font-size: 0.8rem !important;
+  font-size: 0.4rem !important;
   padding: 0.3rem 0.6rem !important;
   margin: 0 0.15rem !important;
-  background-color: #f8f9fa !important;
   color: #333 !important;
   min-width: 50px !important;
   text-align: center;
 }
-
-.dataTables_wrapper .paginate_button:hover {
-  background-color: #e2e6ea !important;
-}
-
 .dataTables_wrapper .paginate_button.current {
   background-color: #007bff !important;
   color: #fff !important;
   border-color: #007bff !important;
 }
-
 
 .datatables-wrapper .dataTables_length {
   display: none !important;
