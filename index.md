@@ -85,7 +85,7 @@ We will check the entry and approve it as soon as possible.
 {% for category in categories %}
   <h3 class="mt-4">{{ category.name }}</h3>
   <div class="datatables-wrapper container-fluid">
-    <table id="table-{{ category.name | slugify }}" class="table table-bordered display responsive nowrap" style="width:100%">
+    <table id="table-{{ category.name | slugify }}" class="display responsive nowrap" style="width:100%">
       <thead class="table-light">
         <tr>
           <th style="width: 100%">Paper Title</th>

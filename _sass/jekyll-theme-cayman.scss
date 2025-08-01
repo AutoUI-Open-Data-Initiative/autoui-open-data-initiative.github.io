@@ -434,138 +434,51 @@ table.dataTable {
 .site-footer-credits {
   color: $blockquote-text-color;
 }
-/* DataTables wrapper layout */
-.datatables-wrapper {
-  width: 100%;
-  margin-bottom: 2rem;
-  overflow-x: auto;
-}
 
-.datatables-wrapper .dataTables_wrapper {
-  width: 100% !important;
-  max-width: 100% !important;
-}
-
-/* Flex layout for search + info/pagination rows */
-.datatables-wrapper .dataTables_wrapper .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 0 0 1rem 0;
-  gap: 0.5rem;
-}
-
-/* Main table appearance */
-.datatables-wrapper table.dataTable {
-  width: 100% !important;
-  table-layout: fixed;
-  font-size: 0.9em;
-  border-collapse: collapse;
-}
-
-.datatables-wrapper table.dataTable td,
-.datatables-wrapper table.dataTable th {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 8px 12px;
-}
-
-.datatables-wrapper table.dataTable tbody tr:hover {
-  background-color: #f8f9fa;
-}
-
-/* Hide "Show entries" dropdown */
-.datatables-wrapper .dataTables_length {
-  display: none !important;
-}
-
-/* Desktop search alignment + styling */
-.datatables-wrapper .dataTables_filter {
-  text-align: right;
-  font-size: 0.9em;
-
-  input[type="search"] {
-    font-size: 0.9em;
-    padding: 4px 8px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-}
-
-/* Footer text + pagination */
-.datatables-wrapper .dataTables_info {
-  display: none !important;
-}
-
-.datatables-wrapper .dataTables_paginate {
-  font-size: 0.9em;
-  padding: 0;
-  margin: 0;
-}
-
-/* Mobile layout adjustments */
-@media screen and (max-width: 768px) {
-  .datatables-wrapper .dataTables_wrapper .row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  /* Mobile search alignment override */
-  .datatables-wrapper .dataTables_filter {
-    text-align: right;
-  }
-}
-
-/* Fix search bar alignment */
-.datatables-wrapper .dataTables_filter {
-  display: flex;
-  justify-content: flex-end;
+/* Align the search bar to the right */
+.dataTables_wrapper .dataTables_filter {
+  display: flex !important;
+  justify-content: flex-end !important;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
-/* Style search input */
-.datatables-wrapper .dataTables_filter input[type="search"] {
-  padding: 4px 10px;
-  font-size: 0.9em;
+.dataTables_wrapper .dataTables_filter input[type="search"] {
+  font-size: 0.9rem;
+  padding: 4px 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-left: 0.5rem;
 }
 
-/* Improve pagination look & alignment */
-.datatables-wrapper .dataTables_paginate {
-  display: flex;
-  justify-content: center;
+/* Center pagination */
+.dataTables_wrapper .dataTables_paginate {
+  display: flex !important;
+  justify-content: center !important;
   align-items: center;
-  gap: 0.25rem;
-  font-size: 0.85em;
-  padding: 0.5rem 0;
+  margin-top: 0.5rem;
 }
 
-.datatables-wrapper .paginate_button {
+/* Equal button size for pagination */
+.dataTables_wrapper .paginate_button {
+  font-size: 0.8rem !important;
   padding: 0.3rem 0.6rem !important;
+  margin: 0 0.15rem !important;
   border: 1px solid #ddd !important;
   border-radius: 4px !important;
   background-color: #f8f9fa !important;
   color: #333 !important;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+  min-width: 32px !important;
+  text-align: center;
 }
 
-.datatables-wrapper .paginate_button:hover {
-  background-color: #e9ecef !important;
+.dataTables_wrapper .paginate_button:hover {
+  background-color: #e2e6ea !important;
 }
 
-.datatables-wrapper .paginate_button.current {
+.dataTables_wrapper .paginate_button.current {
   background-color: #007bff !important;
   color: #fff !important;
   border-color: #007bff !important;
 }
 
-/* Remove larger spacing or inconsistent sizing */
-.datatables-wrapper .dataTables_paginate .paginate_button.previous,
-.datatables-wrapper .dataTables_paginate .paginate_button.next {
-  min-width: unset !important;
-}
