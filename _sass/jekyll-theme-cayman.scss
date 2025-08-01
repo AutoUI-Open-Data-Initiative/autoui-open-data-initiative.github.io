@@ -518,3 +518,54 @@ table.dataTable {
     text-align: right;
   }
 }
+
+/* Fix search bar alignment */
+.datatables-wrapper .dataTables_filter {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+/* Style search input */
+.datatables-wrapper .dataTables_filter input[type="search"] {
+  padding: 4px 10px;
+  font-size: 0.9em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Improve pagination look & alignment */
+.datatables-wrapper .dataTables_paginate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85em;
+  padding: 0.5rem 0;
+}
+
+.datatables-wrapper .paginate_button {
+  padding: 0.3rem 0.6rem !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  background-color: #f8f9fa !important;
+  color: #333 !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.datatables-wrapper .paginate_button:hover {
+  background-color: #e9ecef !important;
+}
+
+.datatables-wrapper .paginate_button.current {
+  background-color: #007bff !important;
+  color: #fff !important;
+  border-color: #007bff !important;
+}
+
+/* Remove larger spacing or inconsistent sizing */
+.datatables-wrapper .dataTables_paginate .paginate_button.previous,
+.datatables-wrapper .dataTables_paginate .paginate_button.next {
+  min-width: unset !important;
+}

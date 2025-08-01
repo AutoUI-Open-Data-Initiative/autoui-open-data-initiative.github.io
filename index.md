@@ -3,28 +3,6 @@ layout: default
 title: Open Science in Automotive User Research
 ---
 
-[//]: # ()
-[//]: # (<style>)
-
-[//]: # (table {)
-
-[//]: # (    width: 100%;)
-
-[//]: # (    table-layout: fixed;)
-
-[//]: # (    overflow: auto;)
-
-[//]: # (})
-
-[//]: # (th, td {)
-
-[//]: # (    padding: 0.5rem 1rem;)
-
-[//]: # (    border: 1px solid #ccc;)
-
-[//]: # (})
-
-[//]: # (</style>)
 
 Openness and transparency are critical not only for judging the quality of empirical research, but also for accelerating scientific progress and promoting an inclusive scientific community. This initiative reflects our commitment to driving forward the development of open, user-centered automotive technologies and services, ensuring that knowledge and findings are shared openly to benefit the broader community. Therefore, we provide **practical guidelines** for authors on how to make their research open and transparent and provide **a platform** for authors to promote the research artifacts they have made available to the broader automotive user research community.
 
