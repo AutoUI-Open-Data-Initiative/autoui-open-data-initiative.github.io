@@ -422,28 +422,22 @@ a {
 
 .site-footer-credits {
   color: $blockquote-text-color;
+}
 
+/* --- DataTables Styling Adjustments Only --- */
 
-
-}/* --- Remove "Show entries" and "Showing X of Y" --- */
-.dataTables_wrapper .dataTables_length,
-.dataTables_wrapper .dataTables_info {
+/* Hide entry count and length selector */
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_length {
   display: none !important;
 }
 
-/* --- Make search bar right-aligned --- */
+/* Align search bar to the right */
 .dataTables_wrapper .dataTables_filter {
   display: flex !important;
   justify-content: flex-end !important;
   margin: 0.75rem 0;
   width: 100%;
-}
-
-.dataTables_wrapper .dataTables_filter label {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
 }
 
 .dataTables_wrapper .dataTables_filter input[type="search"] {
@@ -453,36 +447,28 @@ a {
   border-radius: 4px;
 }
 
-/* --- Make pagination centered & compact --- */
+/* Centered and minimalistic pagination */
 .dataTables_wrapper .dataTables_paginate {
   display: flex !important;
   justify-content: center !important;
-  align-items: center;
   gap: 0.3rem;
   padding: 1rem 0;
 }
 
-/* --- Normalize all pagination buttons --- */
 .dataTables_wrapper .paginate_button {
-  padding: 0.35rem 0.7rem !important;
-  font-size: 0.85rem !important;
-  line-height: 1.2 !important;
-  border: 1px solid #ccc !important;
-  border-radius: 4px !important;
+  padding: 4px 10px !important;
+  font-size: 0.8rem !important;
+  border: none !important;
   background-color: #f8f9fa !important;
   color: #333 !important;
-  min-width: 34px;
-  text-align: center;
+  border-radius: 3px !important;
 }
 
 .dataTables_wrapper .paginate_button:hover {
   background-color: #e9ecef !important;
-  color: #000 !important;
 }
 
 .dataTables_wrapper .paginate_button.current {
   background-color: #007bff !important;
   color: #fff !important;
-  border-color: #007bff !important;
-}
 }
