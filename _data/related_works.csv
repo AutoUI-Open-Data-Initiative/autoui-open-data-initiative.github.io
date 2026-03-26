@@ -10,4 +10,5 @@ Software,Coupled simulator for research on the interaction between pedestrians a
 Model,Example Model 1 that has a very very long title so that the table needs to be broken,Author C,2023,https://dl.acm.org/,https://example.com/model1
 Dataset,Pedestrian planet: What YouTube driving from 233 countries and territories teaches us about the world,Shadab Alam and Marieke Martens and Pavlo Bazilinskyy,2025,https://doi.org/10.1145/3744333.3747827,https://doi.org/10.4121/fe366b3a-5053-4b90-9f78-cc6d3056aaa2
 Dataset,Enhancing cyclist safety in the EU: A study on lateral overtaking distance across seven scenarios using lab and crowdsourced methods,Giovanni Sapienza and Pavlo Bazilinskyy,2025,http://doi.org/10.1145/3744333.3747813,https://data.4tu.nl/datasets/ef92ee06-87c6-4bdb-980f-37cc4f687785
+
 Dataset,Visual Sampling Behavior Does not Explain Risk Perception: A Data-Driven xAI Investigation,Martin Lorenz and Jan Hilbert and Philipp Wintersberger and Patrick Ebel,2025,https://doi.org/10.1145/3744333.3747810;https://osf.io/cwd6h/
